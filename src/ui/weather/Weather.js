@@ -1,10 +1,12 @@
+import Clouds from './Clouds';
+import Wind from './Wind';
 const { Container } = require('@mui/material');
-const { default: Clouds } = require('./Clouds');
 
-function Weather() {
+function Weather({ weatherData }) {
   return (
     <Container>
-      <Clouds />
+      <Clouds weatherData={weatherData} />
+      <Wind weatherData={weatherData} />
     </Container>
   );
 }
