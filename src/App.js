@@ -9,7 +9,7 @@ function App() {
   useEffect(() => {
     axios
       .get(
-        `https://api.openweathermap.org/data/2.5/weather?lat=0&lon=0&lang=pl&appid=${process.env.REACT_APP_API_KEY}`
+        `https://api.openweathermap.org/data/2.5/weather?lat=10&lon=120&lang=pl&appid=${process.env.REACT_APP_API_KEY}`
       )
       .then((response) => {
         setWeatherData(response.data);
@@ -18,7 +18,7 @@ function App() {
 
   return (
     <div className='App'>
-      <Weather weatherData={weatherData} />
+      {weatherData && <Weather weatherData={weatherData} />}
     </div>
   );
 }
