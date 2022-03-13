@@ -1,9 +1,10 @@
 import Clouds from './Clouds';
-import Wind from './Wind';
 import MainData from './MainData';
 import Pressure from './Pressure';
+import WindDirection from './WindDirection';
 import { Container, Box } from '@mui/material';
 import Humidity from './Humidity';
+import WindSpeed from './WindSpeed';
 
 function Weather({ weatherData }) {
   return (
@@ -11,7 +12,6 @@ function Weather({ weatherData }) {
       <MainData weatherData={weatherData} />
       <Box
         sx={{
-          marginLeft: '40px',
           display: 'flex',
           flexWrap: 'wrap',
         }}
@@ -19,7 +19,8 @@ function Weather({ weatherData }) {
         <Pressure weatherData={weatherData} />
         <Clouds weatherData={weatherData} />
         <Humidity weatherData={weatherData} />
-        <Wind weatherData={weatherData} />
+        <WindSpeed weatherData={weatherData} />
+        <WindDirection weatherData={weatherData} />
       </Box>
     </Container>
   );

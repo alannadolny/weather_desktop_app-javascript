@@ -5,9 +5,9 @@ import {
   ListItemAvatar,
   ListItemText,
 } from '@mui/material';
-import AirIcon from '@mui/icons-material/Air';
+import CompareArrowsIcon from '@mui/icons-material/CompareArrows';
 
-function Wind({ weatherData }) {
+function WindDirection({ weatherData }) {
   const windDegrees = (deg) => {
     switch (true) {
       case (deg >= 0 && deg <= 11) || (deg >= 349 && deg <= 360):
@@ -51,7 +51,7 @@ function Wind({ weatherData }) {
     <Container>
       <List
         sx={{
-          width: '50%',
+          width: '100%',
           bgcolor: 'rgba(132, 191, 230, 0.7)',
           borderRadius: '20px',
           marginTop: '10px',
@@ -59,17 +59,16 @@ function Wind({ weatherData }) {
       >
         <ListItem>
           <ListItemAvatar>
-            <AirIcon fontSize='large' />
+            <CompareArrowsIcon fontSize='large' />
           </ListItemAvatar>
           <ListItemText
-            primary='Prędkość wiatru'
-            secondary={`${weatherData.wind.speed} m/s`}
+            primary='Kierunek wiatru'
+            secondary={`${windDegrees(weatherData.wind.deg)}`}
           />
         </ListItem>
       </List>
-      Kierunek wiatru: {windDegrees(weatherData.wind.deg)}
     </Container>
   );
 }
 
-export default Wind;
+export default WindDirection;

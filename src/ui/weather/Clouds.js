@@ -1,5 +1,5 @@
 import {
-  Container,
+  Box,
   List,
   ListItem,
   ListItemAvatar,
@@ -9,7 +9,9 @@ import CloudIcon from '@mui/icons-material/Cloud';
 
 function Clouds({ weatherData }) {
   return (
-    <Container sx={{ width: '50%' }}>
+    <Box
+      sx={{ width: 'calc(50% - 29px)', marginRight: '24px', marginLeft: '5px' }}
+    >
       <List
         sx={{
           width: '100%',
@@ -27,7 +29,7 @@ function Clouds({ weatherData }) {
           />
         </ListItem>
       </List>
-    </Container>
+    </Box>
   );
 }
 

@@ -5,27 +5,28 @@ import {
   ListItemAvatar,
   ListItemText,
 } from '@mui/material';
-import DeviceThermostatIcon from '@mui/icons-material/DeviceThermostat';
+import AirIcon from '@mui/icons-material/Air';
 
-function Pressure({ weatherData }) {
+function WindSpeed({ weatherData }) {
   return (
     <Box
-      sx={{ width: 'calc(50% - 29px)', marginLeft: '24px', marginRight: '5px' }}
+      sx={{ width: 'calc(50% - 29px)', marginRight: '24px', marginLeft: '5px' }}
     >
       <List
         sx={{
           width: '100%',
           bgcolor: 'rgba(132, 191, 230, 0.7)',
           borderRadius: '20px',
+          marginTop: '10px',
         }}
       >
         <ListItem>
           <ListItemAvatar>
-            <DeviceThermostatIcon fontSize='large' />
+            <AirIcon fontSize='large' />
           </ListItemAvatar>
           <ListItemText
-            primary='Ciśnienie'
-            secondary={`${weatherData.main.pressure} hpa`}
+            primary='Prędkość wiatru'
+            secondary={`${weatherData.wind.speed} m/s`}
           />
         </ListItem>
       </List>
@@ -33,4 +34,4 @@ function Pressure({ weatherData }) {
   );
 }
 
-export default Pressure;
+export default WindSpeed;

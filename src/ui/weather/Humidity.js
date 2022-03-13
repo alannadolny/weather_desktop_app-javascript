@@ -1,5 +1,5 @@
 import {
-  Container,
+  Box,
   List,
   ListItem,
   ListItemAvatar,
@@ -9,28 +9,28 @@ import OpacityIcon from '@mui/icons-material/Opacity';
 
 function Humidity({ weatherData }) {
   return (
-    <Container>
-      <Container sx={{ width: '50%' }}>
-        <List
-          sx={{
-            width: '100%',
-            bgcolor: 'rgba(132, 191, 230, 0.7)',
-            borderRadius: '20px',
-          }}
-        >
-          <ListItem>
-            <ListItemAvatar>
-              <OpacityIcon fontSize='large' />
-            </ListItemAvatar>
-            <ListItemText
-              primary='Zachmurznie'
-              secondary={`${weatherData.clouds.all}%`}
-            />
-          </ListItem>
-        </List>
-      </Container>
-      Wilgotność: {weatherData.main.humidity}
-    </Container>
+    <Box
+      sx={{ width: 'calc(50% - 29px)', marginLeft: '24px', marginRight: '5px' }}
+    >
+      <List
+        sx={{
+          marginTop: '10px',
+          width: '100%',
+          bgcolor: 'rgba(132, 191, 230, 0.7)',
+          borderRadius: '20px',
+        }}
+      >
+        <ListItem>
+          <ListItemAvatar>
+            <OpacityIcon fontSize='large' />
+          </ListItemAvatar>
+          <ListItemText
+            primary='Wilgotnosc'
+            secondary={`${weatherData.main.humidity}%`}
+          />
+        </ListItem>
+      </List>
+    </Box>
   );
 }
 
