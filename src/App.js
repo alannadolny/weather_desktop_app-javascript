@@ -9,7 +9,7 @@ function App() {
   useEffect(() => {
     axios
       .get(
-        `https://api.openweathermap.org/data/2.5/weather?lat=10&lon=120&lang=pl&appid=${process.env.REACT_APP_API_KEY}`
+        `https://api.openweathermap.org/data/2.5/weather?lat=35.652832&lon=139.839478&units=metric&lang=pl&appid=${process.env.REACT_APP_API_KEY}`
       )
       .then((response) => {
         setWeatherData(response.data);

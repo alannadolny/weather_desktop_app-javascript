@@ -1,16 +1,18 @@
 import Clouds from './Clouds';
 import Wind from './Wind';
-import MainData from './MainData'
+import MainData from './MainData';
 import Pressure from './Pressure';
-const { Container } = require('@mui/material');
+import { Container, Box } from '@mui/material';
 
 function Weather({ weatherData }) {
   return (
     <Container>
-      <MainData weatherData={weatherData}/>
-      <Pressure weatherData={weatherData}/>
-      <Clouds weatherData={weatherData} />
-      <Wind weatherData={weatherData} />
+      <MainData weatherData={weatherData} />
+      <Box sx={{ marginLeft: '40px' }}>
+        <Pressure weatherData={weatherData} />
+        <Clouds weatherData={weatherData} />
+        <Wind weatherData={weatherData} />
+      </Box>
     </Container>
   );
 }
