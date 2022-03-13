@@ -1,31 +1,32 @@
 import {
   Container,
-  Typography,
   List,
   ListItem,
   ListItemAvatar,
-  Avatar,
   ListItemText,
 } from '@mui/material';
 import DeviceThermostatIcon from '@mui/icons-material/DeviceThermostat';
 
 function Pressure({ weatherData }) {
   return (
-    <Container>
-      <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
+    <Container sx={{ width: '50%' }}>
+      <List
+        sx={{
+          width: '100%',
+          bgcolor: 'rgba(132, 191, 230, 0.7)',
+          borderRadius: '20px',
+        }}
+      >
         <ListItem>
           <ListItemAvatar>
-            <Avatar>
-              <DeviceThermostatIcon />
-            </Avatar>
+            <DeviceThermostatIcon fontSize='large' />
           </ListItemAvatar>
-          <ListItemText primary='Photos' secondary='Jan 9, 2014' />
+          <ListItemText
+            primary='Ciśnienie'
+            secondary={`${weatherData.main.pressure} hpa`}
+          />
         </ListItem>
       </List>
-      <Typography color='primary'>
-        <strong>Ciśnienie: </strong>
-        {weatherData.main.pressure} hpa
-      </Typography>
     </Container>
   );
 }

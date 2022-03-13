@@ -3,7 +3,6 @@ import { Container, Box, Typography } from '@mui/material';
 function MainData({ weatherData }) {
   return (
     <Container sx={{ display: 'flex' }}>
-      {console.log(weatherData)}
       <img
         style={{ width: '200px' }}
         src={`http://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`}

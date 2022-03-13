@@ -1,4 +1,11 @@
-import { Container } from '@mui/material';
+import {
+  Container,
+  List,
+  ListItem,
+  ListItemAvatar,
+  ListItemText,
+} from '@mui/material';
+import AirIcon from '@mui/icons-material/Air';
 
 function Wind({ weatherData }) {
   const windDegrees = (deg) => {
@@ -42,7 +49,24 @@ function Wind({ weatherData }) {
 
   return (
     <Container>
-      Prędkość wiatru: {weatherData.wind.speed} m/s <br />
+      <List
+        sx={{
+          width: '50%',
+          bgcolor: 'rgba(132, 191, 230, 0.7)',
+          borderRadius: '20px',
+          marginTop: '10px',
+        }}
+      >
+        <ListItem>
+          <ListItemAvatar>
+            <AirIcon fontSize='large' />
+          </ListItemAvatar>
+          <ListItemText
+            primary='Prędkość wiatru'
+            secondary={`${weatherData.wind.speed} m/s`}
+          />
+        </ListItem>
+      </List>
       Kierunek wiatru: {windDegrees(weatherData.wind.deg)}
     </Container>
   );
