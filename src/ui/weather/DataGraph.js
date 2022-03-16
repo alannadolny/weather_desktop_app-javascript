@@ -4,12 +4,24 @@ import { Line } from 'react-chartjs-2';
 import * as _ from 'lodash';
 
 function DataGraph({ pastWeatherData }) {
+  const imageArray = pastWeatherData.reduce((prev, curr) => {
+    const image = new Image();
+    image.src = `http://openweathermap.org/img/wn/${curr.weather[0].icon}@2x.png`;
+    return [...prev, image];
+  }, []);
+
   return (
     <Container sx={{ height: '100%' }}>
+      {console.log(imageArray)}
       <Line
         style={{ height: '100%', maxHeight: '350px' }}
         options={{
           maintainAspectRatio: true,
+          elements: {
+            point: {
+              pointStyle: imageArray,
+            },
+          },
           plugins: {
             title: {
               display: true,
