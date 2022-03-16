@@ -1,70 +1,75 @@
-# Getting Started with Create React App
+# WEATHER APP
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## SPIS TREŚCI
 
-## Available Scripts
+- [URUCHOMIENIE PROJEKTU](#uruchomienie-projektu)
+- [UŻYTE TECHNOLOGIE / BIBLIOTEKI](#użyte-technologie-/-biblioteki)
+- [FUNKCJONALNOŚCI](#funkcjonalności)
+- [STATUS PROJEKTU](#status-projektu)
+- [ZRZUTY EKRANU](#zrzuty-ekranu)
 
-In the project directory, you can run:
+## URUCHOMIENIE PROJEKTU
 
-### `yarn start`
+Aby uruchomić projekt należy wejść w folder projektu i wpisać poniższe polecenie, w celu zainstalowania zależności
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```
+yarn install
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+lub
 
-### `yarn test`
+```
+npm i
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Następnie należy wpisać następujące dane w pliku .env.local w folderze projektu
 
-### `yarn build`
+```
+BROWSER=none
+REACT_APP_API_KEY=(twój klucz do OpenWeather api)
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Po zainstalowaniu zależności oraz uzupełneniu pliku środowiskowego wystarczy już wpisać
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+npm run dev
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+lub
 
-### `yarn eject`
+```
+yarn run dev
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## UŻYTE TECHNOLOGIE / BLIBLOTEKI
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- electron
+- react (17.0.2)
+- axios
+- chart.js
+- leaflet
+- radium
+- react-animations
+- react-chartjs-2
+- react-leaflet
+- react-leaflet-custom-control
+- react-router-dom
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## FUNKCJONALNOŚCI
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Aplikacja poprzez użycie electrona jest aplikacją desktopową
+- Użytkownik może wybrać lokację do sprawdzenia pogody poprzez mapę (możliwe przesuwanie pinezki, przybliżanie przyciskami oraz kółkiem myszy)
+- Użytkownik zatwierdza wybraną lokację poprzez naciśnięcie dedykowanego przycisku
+- Na stronie z pogodą wyświetlają się informację odnośnie pogody w danym miejscu (temperatura, ikona obecnej pogody, ciśnienie, opis pogody, zachmurzenie, wilgotność, prędkość wiatru oraz kierunek wiatru)
+- W dolnej części wyświetlany jest wykres z temperaturą zmierzoną w ciągu ostatnich 12h
+- Punkty na wykresie przedstawiają pogodę jaka panowała w danym momencie
+- W prawym górnym roku znajduje się minimapa z zaznaczonym przez użytkownika punktem, służy ona do powrotu do mapy głównej, gdzie użytkownik ponownie może wybrać lokację
 
-## Learn More
+## STATUS PROJEKTU
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Projekt został zakończony (16.03.2022)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## ZRZUTY EKRANU
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<img src="./img/map.gif"/>
+<img src="./img/weather.gif"/>
