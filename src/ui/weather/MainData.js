@@ -1,8 +1,9 @@
 import { Container, Box, Typography } from '@mui/material';
 import Radium, { StyleRoot } from 'radium';
 import { bounceInLeft } from 'react-animations';
+import Minimap from '../map/Minimap';
 
-function MainData({ weatherData }) {
+function MainData({ weatherData, geographicalData }) {
   return (
     <Container sx={{ display: 'flex' }}>
       <StyleRoot>
@@ -28,6 +29,9 @@ function MainData({ weatherData }) {
             {weatherData.weather[0].description}
           </Typography>
         </Box>
+      </Box>
+      <Box>
+        <Minimap geographicalData={geographicalData} />
       </Box>
     </Container>
   );

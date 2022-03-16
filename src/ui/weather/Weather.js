@@ -2,21 +2,15 @@ import Clouds from './Clouds';
 import MainData from './MainData';
 import Pressure from './Pressure';
 import WindDirection from './WindDirection';
-import { Container, Box, Button } from '@mui/material';
+import { Container, Box } from '@mui/material';
 import Humidity from './Humidity';
 import WindSpeed from './WindSpeed';
-import { useNavigate } from 'react-router-dom';
+import DataGraph from './DataGraph';
 
-function Weather({ weatherData }) {
-  const navigate = useNavigate();
-
-  const goToMap = () => {
-    navigate(-1);
-  };
-
+function Weather({ weatherData, pastWeatherData, geographicalData }) {
   return (
-    <Container>
-      <MainData weatherData={weatherData} />
+    <Container sx={{ height: '100%' }}>
+      <MainData weatherData={weatherData} geographicalData={geographicalData} />
       <Box
         sx={{
           display: 'flex',
@@ -29,14 +23,9 @@ function Weather({ weatherData }) {
         <WindSpeed weatherData={weatherData} />
         <WindDirection weatherData={weatherData} />
       </Box>
-      <Button
-        variant='contained'
-        color='primary'
-        onClick={goToMap}
-        sx={{ position: 'absolute', bottom: '40px', left: '50px' }}
-      >
-        Wróć do mapy
-      </Button>
+      <Box sx={{ width: '100%' }}>
+        <DataGraph pastWeatherData={pastWeatherData.hourly} />
+      </Box>
     </Container>
   );
 }

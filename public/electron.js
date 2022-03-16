@@ -5,12 +5,16 @@ const isDev = require('electron-is-dev');
 
 function createWindow() {
   // Create the browser window.
+  const { screen } = require('electron');
+  let factor = screen.getPrimaryDisplay().scaleFactor;
+
   const win = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 1245 / factor,
+    height: 940 / factor,
     resizable: false,
     webPreferences: {
       nodeIntegration: true,
+      zoomFactor: 1.0 / factor,
     },
   });
 

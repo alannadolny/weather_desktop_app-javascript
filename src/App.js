@@ -11,6 +11,7 @@ function App() {
     latitude: null,
     longitude: null,
   });
+  const [pastWeatherData, setPastWeatherData] = useState(null);
 
   useEffect(() => {
     axios
@@ -19,6 +20,14 @@ function App() {
       )
       .then((response) => {
         setWeatherData(response.data);
+        axios
+          .get(
+            `https://api.openweathermap.org/data/2.5/onecall?lat=${geographicalData.latitude}&lon=${geographicalData.longitude}&exclude=current,daily,minutely,alerts&units=metric&appid=${process.env.REACT_APP_API_KEY}`
+          )
+          .then((pastData) => {
+            setPastWeatherData(pastData.data);
+          })
+          .catch();
       })
       .catch();
   }, [geographicalData]);
@@ -27,10 +36,16 @@ function App() {
     <div className='App'>
       <BrowserRouter>
         <Routes>
-          {weatherData && (
+          {weatherData && pastWeatherData && (
             <Route
               path='/weather'
-              element={<Weather weatherData={weatherData} />}
+              element={
+                <Weather
+                  weatherData={weatherData}
+                  pastWeatherData={pastWeatherData}
+                  geographicalData={geographicalData}
+                />
+              }
             />
           )}
           <Route

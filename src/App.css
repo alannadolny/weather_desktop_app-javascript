@@ -5,9 +5,16 @@
   height: 100vh;
 }
 
-.leaflet-container {
-  height: 100vh;
+.main-map {
   width: 100vw;
+  height: 100vh;
+}
+
+.second-map {
+  cursor: pointer;
+  width: 350px;
+  height: 150px;
+  margin: 20px 10px 10px 100px;
 }
 
 .App-logo {

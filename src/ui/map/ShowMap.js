@@ -30,7 +30,14 @@ function ShowMap({ setGeographicalData }) {
 
   return (
     <div>
-      <MapContainer center={[51.505, -0.09]} zoom={13} scrollWheelZoom={false}>
+      <MapContainer
+        className='main-map'
+        center={[54.372158, 18.638306]}
+        zoom={5}
+        scrollWheelZoom={true}
+        zoomAnimation={true}
+        fadeAnimation={true}
+      >
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
