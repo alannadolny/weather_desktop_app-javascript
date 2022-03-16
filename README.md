@@ -71,5 +71,5 @@ Projekt został zakończony (16.03.2022)
 
 ## ZRZUTY EKRANU
 
-<img src="./img/map.gif"/>
-<img src="./img/weather.gif"/>
+<img src="./jpg/map.gif"/>
+<img src="./jpg/weather.gif"/>
