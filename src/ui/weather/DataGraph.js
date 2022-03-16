@@ -6,6 +6,7 @@ import * as _ from 'lodash';
 function DataGraph({ pastWeatherData }) {
   return (
     <Container sx={{ height: '100%' }}>
+      {console.log('test gitlens')}
       <Line
         style={{ height: '100%', maxHeight: '350px' }}
         options={{
